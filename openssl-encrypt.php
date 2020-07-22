@@ -6,8 +6,8 @@ $not_so_secret_IV = "very secret IV";
 $method = "aes-128-gcm";
 
 $key = hash("sha256", $not_so_secret_key);
-
 $iv = substr(hash("sha256", $not_so_secret_IV), 0, 32);
+
 
 $output_encrypted = openssl_encrypt($input, $method, $key, 0, $iv, $tag);
 $output_encrypted = base64_encode($output_encrypted);
